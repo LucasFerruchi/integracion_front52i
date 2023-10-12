@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 //importar navigate
-
+import { useNavigate } from "react-router-dom";
 //Funcion authLogin
 import { authLogin } from "../helpers/ApiLogin";
 
@@ -8,17 +8,17 @@ import logo from "../assets/logo.png";
 import "../css/login.css";
 
 //compoente del mesaje
-// import MessageApp from "../components/MessageApp";
+import MessageApp from "../components/MessageApp";
 
 const LoginScreen = ({ iniciarSesion, guardarUsuario }) => {
   //variable para navigate
-
+  const navigate = useNavigate();
   //estados para guardar correo y password
   const [inputCorreo, setInputCorreo] = useState("");
   const [inputPassword, setInputPassword] = useState("");
 
   //Estado para obtener el mens del resultado de la peticion
-  // const [resultado, setResultado] = useState(null);
+  const [resultado, setResultado] = useState(null);
 
   //Estdo para manejar el loading
   const [loading, setLoading] = useState(false);
@@ -49,10 +49,11 @@ const LoginScreen = ({ iniciarSesion, guardarUsuario }) => {
       guardarUsuario(resp.usuario);
 
       //navigate redireccionar al HOME
+      navigate("/");
     }
 
     //enviamos la respuesta "resultado"
-    // setResultado(resp);
+    setResultado(resp);
 
     //loading a false para q se vuelva a habilitar el boton
     setLoading(false);
@@ -98,6 +99,11 @@ const LoginScreen = ({ iniciarSesion, guardarUsuario }) => {
               </div>
             </form>
             {/* ternario para mostrar mensaje con el "resultado" */}
+            {resultado?.msg && (
+              <div className="mt-2">
+                <MessageApp mensaje={resultado.msg} />
+              </div>
+            )}
           </div>
         </div>
       </div>

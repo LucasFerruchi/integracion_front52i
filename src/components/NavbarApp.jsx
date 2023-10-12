@@ -42,14 +42,14 @@ const NavbarApp = ({ cerrarSesion, user }) => {
                 Destacados
               </NavLink>
             </li>
-            {/* {user.rol === "ADMIN_ROLE" && (
+            {user.rol === "ADMIN_ROLE" && (
               <li className="nav-item">
                 <NavLink className="nav-link" to="/admin">
                   <i className="fa fa-cog" aria-hidden="true"></i>
                   Admin
                 </NavLink>
               </li>
-            )} */}
+            )}
           </ul>
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">

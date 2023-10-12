@@ -1,4 +1,4 @@
-const url = "http://localhost:3000/api/usuarios";
+const url = "http://localhost:8080/api/usuarios";
 
 //traer usuarios
 export const getUsuarios = async () => {};

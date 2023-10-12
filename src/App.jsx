@@ -30,7 +30,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Rutas proteg para login, datos de usuario y func cerrar sesion */}
-        {/* <Route
+        <Route
           path="/*"
           element={
             <ProtectedRoutes login={login}>
@@ -38,7 +38,7 @@ function App() {
             </ProtectedRoutes>
           }
         />
-        <Route path="*" element={<ErrorScreen />} /> */}
+        <Route path="*" element={<ErrorScreen />} />
 
         {/* Ruta login que recibe funcion iniciar sesion y guardar datos */}
         <Route

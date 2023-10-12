@@ -1,4 +1,4 @@
-const url = "http://localhost:3000/api/cursos";
+const url = "http://localhost:8080/api/cursos";
 const token = JSON.parse(localStorage.getItem("token"));
 
 //Traer cursos
