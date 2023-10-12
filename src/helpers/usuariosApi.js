@@ -1,7 +1,14 @@
 const url = "http://localhost:3000/api/usuarios";
 
+//traer usuarios
+export const getUsuarios = async () => {};
+
 //traer usuario por id
-export const getUsuraioById = async (id) => {};
+export const getUsuarioById = async (id) => {};
 
 //crear un usuario (Registro)
 export const crearUsuario = async (datos) => {};
+
+export const actualizarUsuario = async (id, datos) => {};
+
+export const borrarUsuario = async (id) => {};

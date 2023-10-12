@@ -9,4 +9,4 @@ const ProtectedRoutesAdmin = ({ children, user }) => {
 };
 
 export default ProtectedRoutesAdmin;
-//!Ir y ver RoutesDos.jsx
+//!Ver RoutesDos.jsx

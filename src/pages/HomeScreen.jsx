@@ -1,12 +1,6 @@
 import React from "react";
-// import React, { useEffect, useState } from "react";
-// import CardCurso from "../components/CardCurso";
-// import NavCategorias from "../components/NavCategorias";
-
-// import { getCursos } from "../helpers/cursoApi";
 
 import "../css/home.css";
-// import PaginationCursos from "../components/PaginationCursos";
 
 const HomeScreen = () => {
   return (

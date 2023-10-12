@@ -1,23 +1,25 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+//importar navigate
+
 //Funcion authLogin
 import { authLogin } from "../helpers/ApiLogin";
+
 import logo from "../assets/logo.png";
 import "../css/login.css";
 
 //compoente del mesaje
-import MessageApp from "../components/MessageApp";
-//!agregar el componente messageApp debajo del form
+// import MessageApp from "../components/MessageApp";
 
 const LoginScreen = ({ iniciarSesion, guardarUsuario }) => {
-  const navigate = useNavigate();
+  //variable para navigate
+
   //estados para guardar correo y password
   const [inputCorreo, setInputCorreo] = useState("");
   const [inputPassword, setInputPassword] = useState("");
-  //!configurar el form y sus inputs
 
   //Estado para obtener el mens del resultado de la peticion
-  const [resultado, setResultado] = useState(null);
+  // const [resultado, setResultado] = useState(null);
+
   //Estdo para manejar el loading
   const [loading, setLoading] = useState(false);
 
@@ -26,6 +28,7 @@ const LoginScreen = ({ iniciarSesion, guardarUsuario }) => {
     e.preventDefault();
     //ejecutar setLoading
     setLoading(true);
+
     //obtener datos ingresados
     const datos = {
       correo: inputCorreo,
@@ -42,29 +45,15 @@ const LoginScreen = ({ iniciarSesion, guardarUsuario }) => {
       //Ejecutar F iniciarSesion
       iniciarSesion();
 
-      //!2 -----------------------------------
-      // const { nombre, correo, rol, uid } = resp.usuario;
-      //!2 -----------------------------------
-
-      //1-guardar datos de usuario
+      //guardar datos de usuario
       guardarUsuario(resp.usuario);
 
-      //!2 -----------------------------------
-      // //guardar datos de usuario
-      // guardarUsuario({
-      //   nombre,
-      //   correo,
-      //   rol,
-      //   uid,
-      // });
-
-      //!-------------------------------------
-      //2.A- redireccionar al HOME
-      navigate("/");
-      //!2 -----------------------------------
+      //navigate redireccionar al HOME
     }
-    //enviamos la respuesta
-    setResultado(resp);
+
+    //enviamos la respuesta "resultado"
+    // setResultado(resp);
+
     //loading a false para q se vuelva a habilitar el boton
     setLoading(false);
   };
@@ -83,7 +72,6 @@ const LoginScreen = ({ iniciarSesion, guardarUsuario }) => {
               </span>
               Inicio de sesión
             </h3>
-            {/* Funcion del formulario */}
             <form onSubmit={handleLogin}>
               <div className="mt-3">
                 <label className="fw-bold">Correo</label>
@@ -109,12 +97,7 @@ const LoginScreen = ({ iniciarSesion, guardarUsuario }) => {
                 </button>
               </div>
             </form>
-            {/* ternario para mostrar mensaje con el resultado */}
-            {resultado?.msg && (
-              <div className="mt-2">
-                <MessageApp mensaje={resultado.msg} />
-              </div>
-            )}
+            {/* ternario para mostrar mensaje con el "resultado" */}
           </div>
         </div>
       </div>

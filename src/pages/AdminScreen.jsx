@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import PaginationCursos from "../components/PaginationCursos";
-// import TableCursos from "../components/TableCursos";
-// import { getCursos } from "../helpers/cursoApi";
 
 const AdminScreen = () => {
   return (
