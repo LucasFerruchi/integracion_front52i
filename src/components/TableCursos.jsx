@@ -2,6 +2,7 @@ import React, { useState } from "react";
 //funcion borrar cursos
 import { borrarCurso } from "../helpers/cursoApi";
 
+//Sweet Alert
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
@@ -14,6 +15,7 @@ const TableCursos = ({ cursos, traerCursos }) => {
   //Manejo del modal-------------------
   //mostrar el modal
   const [show, setShow] = useState(false);
+
   //por id del curso
   const [cid, setCid] = useState(null);
 
