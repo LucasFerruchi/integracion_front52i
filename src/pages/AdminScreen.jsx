@@ -1,4 +1,9 @@
 import React, { useEffect, useState } from "react";
+//Paginacion
+
+//Tabla de cursos
+
+//Funcion traer cursos
 
 const AdminScreen = () => {
   return (
@@ -15,7 +20,9 @@ const AdminScreen = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-12 col-md-8 offset-md-2"></div>
+          <div className="col-12 col-md-8 offset-md-2">
+            {/* Tabla de cursos */}
+          </div>
         </div>
       </div>
     </div>
