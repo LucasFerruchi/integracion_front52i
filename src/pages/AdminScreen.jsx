@@ -15,7 +15,7 @@ const AdminScreen = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-12 col-md-8 offset-md-2">{/* Tabla */}</div>
+          <div className="col-12 col-md-8 offset-md-2"></div>
         </div>
       </div>
     </div>
