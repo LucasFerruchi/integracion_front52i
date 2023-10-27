@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 //Paginacion
-
+import { Pagination } from "react-bootstrap";
 //Tabla de cursos
 import TableCursos from "../components/TableCursos";
 
@@ -13,14 +13,20 @@ const AdminScreen = () => {
   //Total de cursos
   const [totalCursos, setTotalCursos] = useState(0);
 
+  //PAGINACION
+  const limite = 6;
+  const [pagina, setPagina] = useState(0);
+
   //useEffect q renderiza la tabla con los cursos
   useEffect(() => {
     traerCursos();
-  }, [cursos]);
+    // }, [cursos]);
+  }, [pagina]);
 
   //Funcion asincronica
   const traerCursos = async () => {
-    const { cursos, total } = await getCursos();
+    //agrego parametros para paginacion
+    const { cursos, total } = await getCursos(limite, pagina);
     setCursos(cursos);
     setTotalCursos(total);
   };
@@ -44,6 +50,12 @@ const AdminScreen = () => {
             {cursos.length > 0 ? (
               <>
                 <h4>Total de cursos: {totalCursos}</h4>
+                {/* PAGINACION */}
+                <Pagination
+                  pagina={pagina}
+                  setPagina={setPagina}
+                  total={totalCursos}
+                />
                 <TableCursos cursos={cursos} traerCursos={traerCursos} />
               </>
             ) : (
