@@ -1,6 +1,6 @@
 import React from "react";
 
-const PagnationCursos = ({ total, pagina, setPagina }) => {
+const Pagination = ({ total, pagina, setPagina }) => {
   const paginas = [];
   const resultado = Math.ceil(total / 6);
 
@@ -53,4 +53,4 @@ const PagnationCursos = ({ total, pagina, setPagina }) => {
   );
 };
 
-export default PagnationCursos;
+export default Pagination;

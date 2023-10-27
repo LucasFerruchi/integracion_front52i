@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 //Paginacion
-import { Pagination } from "react-bootstrap";
+import Pagination from "../components/Pagination";
 //Tabla de cursos
 import TableCursos from "../components/TableCursos";
 
