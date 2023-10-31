@@ -5,6 +5,7 @@ import AboutScreen from "../pages/AboutScreen";
 import AdminScreen from "../pages/AdminScreen";
 import ErrorScreen from "../pages/ErrorScreen";
 import HomeScreen from "../pages/HomeScreen";
+import CursoScreen from "../pages/CursoScreen";
 import ProtectedRoutesAdmin from "../routes/ProtectedRoutesAdmin";
 
 const RoutesDos = ({ cerrarSesion, user }) => {
@@ -14,6 +15,7 @@ const RoutesDos = ({ cerrarSesion, user }) => {
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/about" element={<AboutScreen />} />
+        <Route path="/curso/:id" element={<CursoScreen />} />
         <Route
           path="/admin"
           element={
