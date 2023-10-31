@@ -3,7 +3,6 @@ import { getCategorias } from "../helpers/categoriaApi";
 
 const NavCategorias = ({ categoriaSeleccionada }) => {
   const [categorias, setCategorias] = useState(null);
-  // const token = JSON.parse(localStorage.getItem("token"));
 
   useEffect(() => {
     traerCategorias();
