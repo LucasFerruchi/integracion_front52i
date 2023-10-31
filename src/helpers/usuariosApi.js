@@ -1,14 +1,34 @@
 const url = "http://localhost:8080/api/usuarios";
 
-//traer usuarios
-export const getUsuarios = async () => {};
-
 //traer usuario por id
-export const getUsuarioById = async (id) => {};
+export const getUsuraioById = async (id) => {
+  try {
+    const resp = await fetch(url + "/" + id);
+    const data = await resp.json();
+
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw new Error("No se pudo obtener la info");
+  }
+};
 
 //crear un usuario (Registro)
-export const crearUsuario = async (datos) => {};
+export const crearUsuario = async (datos) => {
+  try {
+    const resp = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(datos),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
 
-export const actualizarUsuario = async (id, datos) => {};
+    const data = await resp.json();
 
-export const borrarUsuario = async (id) => {};
+    return data;
+  } catch (error) {
+    console.log(error);
+    return { msg: "No se conectó con backend" };
+  }
+};
